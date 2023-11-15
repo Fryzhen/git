@@ -2,6 +2,7 @@ package fr.iut.editeur.document;
 
 public class Document {
 
+
     private String texte;
 
     public Document() {
@@ -12,6 +13,10 @@ public class Document {
         return texte;
     }
 
+    /**
+     * met le texte à la valeur de texte
+     * @param texte description du premier paramètre
+     */
     public void setTexte(String texte) {
         this.texte = texte;
     }
