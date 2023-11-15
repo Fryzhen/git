@@ -21,10 +21,19 @@ public class Document {
         this.texte = texte;
     }
 
+    /**
+     *
+     * @param texte texte à ajouter
+     */
     public void ajouter(String texte) {
         this.texte += texte;
     }
 
+    /**
+     * @param start début du remplacement
+     * @param end fin du remplacement
+     * @param remplacement texte qui remplace
+     */
     public void remplacer(int start, int end, String remplacement) {
         String leftPart = texte.substring(0, start);
         String rightPart = texte.substring(end);
