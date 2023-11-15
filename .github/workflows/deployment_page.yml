@@ -1,0 +1,31 @@
+name: Lancement du deploiment de la page
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  javadoc:
+    runs-on: ubuntu-latest
+    steps: #Etapes à réaliser sur le système
+      #On se place dans le dépôt...
+      - name: Checkout
+        uses: actions/checkout@v3
+
+        #...on installe Java...
+      - name: Set up Java 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+
+        #...et on lance le script de JavaDoc
+      - name: Run Javadoc
+        run: mvn javadoc::javadoc
+
+      - name: Push on branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/apidocs
+
