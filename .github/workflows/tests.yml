@@ -18,5 +18,5 @@ jobs:
 
         #...et on lance le script de test
       - name: Run tests
-        run: mvn test.
+        run: mvn test
 
